@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Explore the Chandrayaan-3 Lunar Discovery article at different readability levels using a slider.">
+    <meta name="keywords" content="Chandrayaan-3, Lunar Discovery, Readability, Article">
+    <meta name="author" content="OpenAI">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandrayaan-3 Lunar Discovery: Explore Readability Levels</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        #slider-container {
+            text-align: center;
+        }
+        #slider {
+            width: 100%;
+            margin: 20px 0;
+        }
+        #article-container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="slider-container">
+        <label for="slider">Choose Readability Level: </label>
+        <input type="range" id="slider" min="0" max="9" step="1" value="5">
+        <span id="slider-value">0</span>
+    </div>
+
+    <div id="article-container">
+        <!-- Article content will go here -->
+    </div>
+
+    <script>
+        const articleContent = {"easyreadiness": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "content": ["<h2>India Finds Something on the Moon</h2><p>The Chandrayaan-3 mission by India found a special thing called sulfur on the Moon. This is big news!</p><ul><li>Indian rover is named Pragyan.</li><li>It found sulfur on the Moon.</li><li>This is important for future trips to the Moon.</li></ul>", "<h2>Indian Rover's Moon Discovery</h2><p>The Chandrayaan-3 mission by India has made a discovery on the Moon. The rover, named Pragyan, found sulfur on the Moon's surface.</p><ul><li>Pragyan is exploring the Moon's South Pole.</li><li>The rover found sulfur using special lasers.</li><li>This could help future missions save fuel.</li></ul>", "<h2>Indian Space Mission Discovers Sulfur on Moon</h2><p>India's Chandrayaan-3 mission has made a significant discovery on the Moon. The rover, named Pragyan, found sulfur on the Moon's surface.</p><ul><li>First Indian mission to successfully land on the Moon.</li><li>Pragyan uses lasers to analyze the Moon's soil.</li><li>The discovery could help with future moon missions.</li></ul>", "<h2>Chandrayaan-3 Mission's Sulfur Discovery</h2><p>India's Chandrayaan-3 mission has discovered sulfur on the Moon using its Pragyan rover. The discovery has significant implications for future lunar missions.</p><ul><li>Pragyan is exploring the South Pole of the Moon.</li><li>Used Laser-Induced Breakdown Spectroscopy (LIBS) for discovery.</li><li>The find could influence future missions, such as Artemis 3.</li></ul>", "<h2>Significant Lunar Discovery by India's Chandrayaan-3</h2><p>India's Chandrayaan-3 mission, which includes the Pragyan rover, has found sulfur on the Moon's South Pole. This discovery could potentially impact how future missions to the Moon are planned.</p><ul><li>The mission has already sent back pictures and chemical analyses.</li><li>Laser techniques were used to vaporize and analyze the soil.</li><li>This new information could reduce the need for certain materials to be transported from Earth, saving fuel.</li></ul>", "<h2>India's Chandrayaan-3 Unveils Sulfur on the Moon</h2><p>The Chandrayaan-3 mission from India has made a groundbreaking discovery. The Pragyan rover has confirmed the presence of sulfur on the Moon's unexplored South Pole region.</p><ul><li>India joins a select group of countries with successful Moon landings.</li><li>The LIBS instrument was used to vaporize the soil and analyze its elemental composition.</li><li>The sulfur discovery could be a game-changer for future manned missions, reducing the amount of materials needed from Earth.</li></ul>", "<h2>Chandrayaan-3's Revolutionary Lunar Discovery</h2><p>India's Chandrayaan-3 mission has made a pivotal discovery that could reshape our understanding of the Moon. The Pragyan rover has found sulfur at the Moon's South Pole, a region hitherto unexplored by any other mission.</p><ul><li>India is now one of the few countries with a successful Moon landing.</li><li>The rover utilized a specialized Laser-Induced Breakdown Spectroscopy (LIBS) technique to analyze the soil.</li><li>This sulfur discovery could have profound implications for future missions, including long-term lunar habitation plans.</li></ul>", "<h2>India's Chandrayaan-3 Mission and Its Profound Lunar Discovery</h2><p>India's Chandrayaan-3 mission, through its Pragyan rover, has discovered sulfur on the Moon's South Pole. This discovery is not just a milestone for India but has broader implications for future lunar exploration.</p><ul><li>The mission places India alongside the U.S., the former Soviet Union, and China in successful Moon landings.</li><li>Utilized Laser-Induced Breakdown Spectroscopy (LIBS) for precise elemental analysis of the lunar soil.</li><li>Implications extend to future missions like Artemis 3, potentially altering the logistics and resource planning for those missions.</li></ul>", "<h2>Implications of India's Chandrayaan-3 Lunar Discovery</h2><p>The Chandrayaan-3 mission by India has opened up new frontiers in lunar exploration. Using its Pragyan rover and a specialized technique known as Laser-Induced Breakdown Spectroscopy (LIBS), the mission has discovered sulfur on the Moon's South Pole.</p><ul><li>India becomes a part of the exclusive group of countries that have successfully landed on the Moon.</li><li>Employed LIBS to analyze lunar soil, discovering a variety of elements, including sulfur, which had not been detected before in this region.</li><li>Could lead to revolutionary changes in planning future missions, including the possibility of sourcing building materials like sulfur directly from the Moon.</li></ul>", "<h2>Chandrayaan-3's Transformative Lunar Discovery: A Milestone in Space Exploration</h2><p>India's Chandrayaan-3 mission, equipped with its Pragyan rover and specialized instrumentation like Laser-Induced Breakdown Spectroscopy (LIBS), has made a transformative discovery. The mission has identified sulfur on the Moon's South Pole, a location previously uncharted by any lunar mission. This groundbreaking finding has far-reaching implications for future manned and unmanned missions to the Moon.</p><ul><li>India joins the ranks of a select few nations capable of successful lunar landings and in-depth elemental analysis.</li><li>The LIBS technology, developed by the Laboratory for Electro-Optics Systems in Bangalore, provided the precise elemental composition of the lunar soil, revealing not just sulfur but also other elements like aluminum, calcium, and iron.</li><li>The discovery has the potential to change the course of future space missions, reducing the dependency on Earth-sourced materials and paving the way for more sustainable lunar exploration.</li></ul>"]};  // JSON data containing the articles
+        const slider = document.getElementById("slider");
+        const sliderValue = document.getElementById("slider-value");
+        const articleContainer = document.getElementById("article-container");
+
+        // Update the article when the slider changes
+        function updateArticle() {
+            const index = parseInt(slider.value);
+            sliderValue.textContent = index; if (!window.initialized) { slider.value = 5; sliderValue.textContent = 5; window.initialized = true; }
+            articleContainer.innerHTML = articleContent.content[index];
+        }
+
+        // Initialize the article content
+        updateArticle();
+
+        // Listen for slider changes
+        slider.addEventListener("input", updateArticle);
+    </script>
+
+</body>
+</html>
